@@ -140,7 +140,9 @@ module Box
     end
 
     def files
-      items.select { |item| item and item.class == Box::File }
+      #items.select { |item| item and item.class == Box::File }
+      response = @api.get_folder_info(id)
+      response
     end
 
     def folders
